@@ -1,9 +1,10 @@
-from flask import request, make_response, jsonify
+from flask import request, make_response
 
 from werkzeug.exceptions import NotFound
 
 from config import app
 
+# unique error message upon nonexistent server-side route
 @app.errorhandler(NotFound)
 def route_not_found(e):
     response = make_response(
