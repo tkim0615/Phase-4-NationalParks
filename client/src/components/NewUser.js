@@ -7,7 +7,7 @@ function NewUser() {
     function addNewUser(e) {
         e.preventDefault();
 
-        newUserObj = {
+        let newUserObj = {
             "username" : e.target.username.value,
             "password" : e.target.password.value
         }
@@ -28,6 +28,7 @@ function NewUser() {
             <form onSubmit = { (e) => addNewUser(e) }>
                 <input placeholder = "username" name = "username" />
                 <input placeholder = "password" name = "password" />
+                <input type = "submit" />
             </form>
         </div>
     )
