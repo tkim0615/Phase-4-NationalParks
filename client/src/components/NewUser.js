@@ -23,14 +23,45 @@ function NewUser() {
         .then((returnedUserObj) => console.log(returnedUserObj))
     }
 
+    function editExistingUser(e) {
+        e.preventDefault();
+
+        let editedUserObj = {
+            "username" : e.target.username.value,
+            "password" : e.target.password.value
+        }
+
+        fetch(`/users/${e.target.id.value}`, {
+            method : "PATCH",
+            headers : {
+                "Content-type" : "application/json"
+            },
+            body : JSON.stringify(editedUserObj)
+        })
+        .then((resp) => resp.json())
+        .then((returnedUserObj) => console.log(returnedUserObj))
+    }
+
     return (
         <div>
-            <form onSubmit = { (e) => addNewUser(e) }>
-                <input placeholder = "username" name = "username" />
-                <input placeholder = "password" name = "password" />
-                <input type = "submit" />
+            <div>
+                <h2>Add New User</h2>
+                <form onSubmit = { (e) => addNewUser(e) }>
+                    <input placeholder = "username" name = "username" />
+                    <input placeholder = "password" name = "password" />
+                    <input type = "submit" />
+                </form>
+            </div>
+            <div>
+                <h2>Edit Existing User</h2>
+                <form onSubmit = { (e) => editExistingUser(e) }>
+                    <input placeholder = "id" name = "id" />
+                    <input placeholder = "username" name = "username" />
+                    <input placeholder = "password" name = "password" />
+                    <input type = "submit" />
             </form>
         </div>
+    </div>
     )
 }
 
