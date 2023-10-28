@@ -16,3 +16,5 @@ function AllUsers() {
         <div></div>
     )
 }
+
+export default AllUsers;

@@ -12,7 +12,7 @@ function AllNationalParks() {
             .then((data) => setNationalParkArr(data))
     }, [])
 
-    nationalParkArrToRender = []
+    let nationalParkArrToRender = []
 
     if (nationalParkArr.length > 0) {
         nationalParkArrToRender = nationalParkArr.map((nationalParkObj) => (
@@ -31,3 +31,5 @@ function AllNationalParks() {
         </div>
     )
 }
+
+export default AllNationalParks;

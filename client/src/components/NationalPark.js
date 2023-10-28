@@ -15,3 +15,5 @@ function NationalPark( {id, name, state} ) {
         </div>
     )
 }
+
+export default NationalPark;

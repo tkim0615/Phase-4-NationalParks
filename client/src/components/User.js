@@ -12,7 +12,9 @@ function User() {
 
     return (
         <div>
-            <input placeholder = "id" onChange = {(e) => selectID(e)} />
+            <input placeholder = "id" onChange = {(e) => setUserID(e.target.value)} />
         </div>
     )
 }
+
+export default User;
