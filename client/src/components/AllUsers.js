@@ -13,7 +13,9 @@ function AllUsers() {
     console.log(userArr)
 
     return (
-        <div></div>
+        <div>
+            <p>Check the Console!</p>
+        </div>
     )
 }
 

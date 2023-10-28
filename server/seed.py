@@ -77,4 +77,3 @@ if __name__ == '__main__':
         db.session.add_all(visits_to_add)
 
         db.session.commit()
-        

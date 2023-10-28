@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 function NationalPark( {id, name, state} ) {
 
     function deletePark() {
-        fetch(`/national_park/${id}` , {
+        fetch(`/national_parks/${id}` , {
             method : "DELETE"
         })
     }
